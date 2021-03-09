@@ -14,10 +14,10 @@ if [ -z "${FTS_CONNECTION_MESSAGE}" ]; then
   echo "Using Default Connection Message"
 else
   if [ "${FTS_CONNECTION_MESSAGE}" = "None" ]; then
-    sed -i "s+ConnectionMessage = .*+ConnectionMessage = None+g" /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
+    sed -i "s+ConnectionMessage = .*+ConnectionMessage = None+g" /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
   else
     echo "Setting Server Message: ${FTS_CONNECTION_MESSAGE}"
-    sed -i "s+ConnectionMessage = .*+ConnectionMessage = '${FTS_CONNECTION_MESSAGE}'+g" /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
+    sed -i "s+ConnectionMessage = .*+ConnectionMessage = '${FTS_CONNECTION_MESSAGE}'+g" /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
   fi
 fi
 
@@ -25,7 +25,7 @@ fi
 if [ -z "${FTS_SAVE_COT_TO_DB}" ]; then
   echo "Using Default SaveCoTToDB"
 else
-  sed -i "s+SaveCoTToDB = bool(.*+SaveCoTToDB = bool(${FTS_SAVE_COT_TO_DB})+g" /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
+  sed -i "s+SaveCoTToDB = bool(.*+SaveCoTToDB = bool(${FTS_SAVE_COT_TO_DB})+g" /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
 fi
 
 #set external IP if it's provided via ENV variables

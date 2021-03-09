@@ -1,5 +1,8 @@
+FROM balenalib/aarch64-python:3.8-ubuntu:focal-build
+#FROM balenalib/aarch64-ubuntu:focal-build
+
 #FROM debian:10-slim
-FROM python:3.8-slim-buster
+#FROM python:3.8-slim-buster
 #FROM ubuntu:latest
 
 MAINTAINER FreeTAKTeam
@@ -26,10 +29,10 @@ RUN pip3 install wheel
 RUN pip3 install flask-login 
 
 # OpenSSL needs rust, get it first
-RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
-RUN ln -s $HOME/.cargo/env /etc/profile.d/cargo_env.sh
-RUN pip3 install pyOpenSSL
-RUN pip3 install flask-httpauth
+#RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+#RUN ln -s $HOME/.cargo/env /etc/profile.d/cargo_env.sh
+#RUN pip3 install pyOpenSSL
+#RUN pip3 install flask-httpauth
 
 RUN pip3 install FreeTAKServer==${FTS_VERSION} && \
     pip3 check FreeTakServer

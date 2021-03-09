@@ -6,6 +6,9 @@ if ! touch /data/.verify_access; then
   exit 2
 fi
 
+# JAB
+find /usr/local/lib/python3.8/ -print
+
 #FTS doesn't pre-create logs directory
 mkdir -pv /data/logs
 

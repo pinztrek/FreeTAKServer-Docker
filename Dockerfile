@@ -60,6 +60,9 @@ RUN  sed -i s='logs'='/data/logs'=g /usr/local/lib/python3.8/dist-packages/FreeT
 RUN mkdir -m 775 /usr/local/lib/python3.8/dist-packages/FreeTAKServer/ExCheck
 RUN mkdir -m 775 /usr/local/lib/python3.8/dist-packages/FreeTAKServer/ExCheck/checklist
 RUN mkdir -m 775 /usr/local/lib/python3.8/dist-packages/FreeTAKServer/ExCheck/template
+RUN mkdir -m 775 /usr/local/lib/python3.8/site-packages/FreeTAKServer/ExCheck
+RUN mkdir -m 775 /usr/local/lib/python3.8/site-packages/FreeTAKServer/ExCheck/checklist
+RUN mkdir -m 775 /usr/local/lib/python3.8/site-packages/FreeTAKServer/ExCheck/template
 
 # Clean up items we no longer need (having this earlier breaks some pip items)
 #RUN apt-get remove -y python3-pip curl python3-setuptools build-essential python3-dev && \
